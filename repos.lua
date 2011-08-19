@@ -147,4 +147,9 @@ function repos.watched(user)
 	end
 end
 
+function repos.tags( repo, user )
+   local t = luahub._apiquery( 'repos/show', user, repo, 'tags' )
+   return t.tags
+end
+
 luahub.repos = repos
